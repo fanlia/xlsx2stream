@@ -1,0 +1,30 @@
+{
+  "name": "xlsx2stream",
+  "version": "1.0.0",
+  "description": "xlsx to stream",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanlia/xlsx2stream.git"
+  },
+  "keywords": [
+    "xlsx",
+    "stream",
+    "csv",
+    "json"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fanlia/xlsx2stream/issues"
+  },
+  "homepage": "https://github.com/fanlia/xlsx2stream#readme",
+  "dependencies": {
+    "@ailnaf/xlsx2csv": "^1.1.5",
+    "csv-stringify": "^6.2.0"
+  }
+}
