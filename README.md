@@ -13,7 +13,7 @@ npm i xlsx2stream
 ### esm
 
 ```javascript
-import xlsx2stream from 'xlsx2stream'
+import xlsx2stream, { xlsx2csv, xlsx2json } from 'xlsx2stream'
 
 ```
 
