@@ -20,7 +20,7 @@ import xlsx2stream, { xlsx2csv, xlsx2json } from 'xlsx2stream'
 ### cjs
 
 ```javascript
-const { default: xlsx2stream } = await import('xlsx2stream')
+const { default: xlsx2stream, xlsx2csv, xlsx2json } = await import('xlsx2stream')
 ```
 
 ### nodejs
@@ -33,8 +33,10 @@ xlsx2stream(filename)
 .on('data', console.log)
 .on('end', () => console.log('end'))
 
+// to csv
 xlsx2csv(filename).pipe(process.stdout)
 
+// to ndjson
 xlsx2json(filename).pipe(process.stdout)
 
 ```
