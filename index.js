@@ -30,12 +30,12 @@ export default function xlsx2stream(file, options = {}) {
 
 }
 
-export function xlsx2csv(file, options = {}) {
+export function xlsx2csv(file) {
 
-    return xlsx2stream(file, { json: false }).pipe(stringify(options))
+    return xlsx2stream(file, { json: false }).pipe(stringify())
 }
 
-export function xlsx2json(file, options = {}) {
+export function xlsx2json(file) {
 
     return xlsx2stream(file, { json: true }).pipe(new Transform({
         objectMode: true,
