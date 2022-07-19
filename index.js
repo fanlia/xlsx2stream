@@ -49,9 +49,23 @@ export function xlsx2json(file) {
 
     return xlsx2stream(file, { json: true }).pipe(new Transform({
         objectMode: true,
+        construct(callback) {
+            this.first = true
+            this.push('[\n')
+            callback()
+        },
         transform(chunk, encoding, callback) {
             const json = JSON.stringify(chunk)
-            callback(null, `${json}\n`)
+            if (this.first) {
+                callback(null, `${json}`)
+                this.first = false
+            } else {
+                callback(null, `,\n${json}`)
+            }
+        },
+        flush(callback) {
+            this.push('\n]\n')
+            callback()
         },
     }))
 

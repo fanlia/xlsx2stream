@@ -36,7 +36,7 @@ xlsx2stream(filename)
 // to csv
 xlsx2csv(filename).pipe(process.stdout)
 
-// to ndjson
+// to json
 xlsx2json(filename).pipe(process.stdout)
 
 ```
