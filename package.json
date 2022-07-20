@@ -1,6 +1,6 @@
 {
   "name": "xlsx2stream",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "xlsx to stream",
   "main": "index.js",
   "type": "module",
