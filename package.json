@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/fanlia/xlsx2stream#readme",
   "dependencies": {
-    "@ailnaf/xlsx2csv": "1.2",
+    "@ailnaf/xlsx2csv": "^1.2.1",
     "csv-stringify": "^6.2.0"
   }
 }

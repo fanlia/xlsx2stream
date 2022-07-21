@@ -1,5 +1,4 @@
 
-import fs from 'fs'
 import xlsx from '@ailnaf/xlsx2csv'
 import { stringify } from 'csv-stringify'
 import { Readable, Transform } from 'stream'
@@ -10,8 +9,6 @@ export default function xlsx2stream(file, options = {}) {
         json,
     } = options
 
-    const buffer = fs.readFileSync(file)
-
     let started = false
 
     const start = (reader) => {
@@ -19,7 +16,7 @@ export default function xlsx2stream(file, options = {}) {
         started = true
         let header = undefined
 
-        xlsx(buffer, data => {
+        xlsx(file, data => {
             if (json) {
                 if (header) {
                     reader.push(header.reduce((m, d, i) => ({...m, [d]: data[i]}), {}))
