@@ -14,19 +14,10 @@ export default function xlsx2stream(file, options = {}) {
     const start = (reader) => {
         if (started) return
         started = true
-        let header = undefined
 
         xlsx(file, data => {
-            if (json) {
-                if (header) {
-                    reader.push(header.reduce((m, d, i) => ({...m, [d]: data[i]}), {}))
-                } else {
-                    header = data
-                }
-            } else {
-                reader.push(data)
-            }
-        })
+            reader.push(data)
+        }, { sheet: { json }})
         .then(() => {
             reader.push(null)
         })
